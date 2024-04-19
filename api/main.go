@@ -71,7 +71,7 @@ func main() {
 		})
 	})
 
-	port := f mt.Sprintf(":%s", os.Getenv("PORT"))
+	port := fmt.Sprintf(":%s", os.Getenv("PORT"))
 	r.Run(port)
 }
 
