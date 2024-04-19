@@ -7,6 +7,7 @@
 
   async function addPlayer() {
     try {
+      // TODO: Figure out how to make .env var be api url and it not error 
       const response = await fetch("http://127.0.0.1:8090/players", {
         method: 'POST',
         headers: {
