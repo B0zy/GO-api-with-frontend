@@ -24,7 +24,7 @@ func main() {
 	}
 
 	db := database.GetDB()
-	players.SetDB(db) // Set the database connection in the players package
+	players.SetDB(db)
 
 	r := gin.Default()
 
