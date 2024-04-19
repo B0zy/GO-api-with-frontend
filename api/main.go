@@ -61,11 +61,9 @@ func main() {
 		c.JSON(http.StatusCreated, newPlayer)
 	})
 
-	var fplayers []players.APIPlayer
-
-	db.Model(&players.Player{}).Find(&fplayers)
-
 	r.GET("/players", func(c *gin.Context) {
+		var fplayers []players.APIPlayer
+		db.Model(&players.Player{}).Find(&fplayers)
 		c.JSON(200, gin.H{
 			"data": fplayers,
 		})
