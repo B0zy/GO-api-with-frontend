@@ -7,7 +7,6 @@
 
   async function addPlayer() {
     try {
-      const url = import.meta.env.API_URL;
       const response = await fetch("http://127.0.0.1:8090/players", {
         method: 'POST',
         headers: {
