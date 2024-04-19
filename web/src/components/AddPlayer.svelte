@@ -13,7 +13,7 @@
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData) // Ensure formData is correctly populated
+        body: JSON.stringify(formData) 
       });
 
       if (!response.ok) {
