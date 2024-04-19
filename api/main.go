@@ -31,7 +31,8 @@ func main() {
 
 	// Configure CORS middleware
 	config := cors.DefaultConfig()
-	config.AllowOrigins = []string{"http://localhost:5173"} // This needs to be Frontend URL
+	fport := fmt.Sprintf("http://localhost:%s", os.Getenv("FRONT_PORT"))
+	config.AllowOrigins = []string{fport} // This needs to be Frontend URL
 	config.AllowHeaders = []string{"Origin", "Content-Type"}
 	r.Use(cors.New(config))
 
@@ -70,7 +71,7 @@ func main() {
 		})
 	})
 
-	port := fmt.Sprintf(":%s", os.Getenv("PORT"))
+	port := f mt.Sprintf(":%s", os.Getenv("PORT"))
 	r.Run(port)
 }
 
