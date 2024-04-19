@@ -1,9 +1,4 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
-    import { createEventDispatcher } from 'svelte';
-  
-    const dispatch = createEventDispatcher();
-  
     let formData = {
       Username: '',
       Password: '',
@@ -12,7 +7,8 @@
   
     async function addPlayer() {
       try {
-        const response = await fetch('http://127.0.0.1:8090/players', {
+        const url = import.meta.env.API_URL;
+        const response = await fetch(url, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -25,7 +21,6 @@
         }
   
         console.log('Player added successfully!');
-        dispatch('playerAdded'); // Emit event to notify parent components
       } catch (error) {
         console.error('Error adding player:', error.message);
       }
